@@ -1,0 +1,50 @@
+﻿@model Car_Rental_Web.Models.DB.carreg
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/carregLayout.cshtml";
+}
+
+<h2 style="color:white">Details</h2>
+
+<div>
+    <h4 style="color:white">carreg</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.carNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.carNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Make)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Make)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Available)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Available)
+        </dd>
+
+    </dl>
+</div>
+<p class="btn btn-outline-info">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
+</p>

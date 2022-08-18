@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarRentalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="carreg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="carNo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Make" Type="varchar" MaxLength="30" />
+    <Property Name="Model" Type="varchar" MaxLength="30" />
+    <Property Name="Available" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="CustId" />
+    </Key>
+    <Property Name="CustId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustName" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="100" />
+    <Property Name="Mobile" Type="varchar" MaxLength="11" />
+  </EntityType>
+  <EntityType Name="Rental">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="carid" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="custid" Type="varchar" MaxLength="20" />
+    <Property Name="fee" Type="varchar" MaxLength="10" />
+    <Property Name="sdate" Type="date" />
+    <Property Name="edate" Type="date" />
+  </EntityType>
+  <EntityType Name="returnCar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="carno" Type="varchar" MaxLength="20" />
+    <Property Name="custId" Type="int" />
+    <Property Name="date" Type="date" />
+    <Property Name="elsp" Type="int" />
+    <Property Name="fine" Type="int" />
+  </EntityType>
+  <EntityContainer Name="CarRentalModelStoreContainer">
+    <EntitySet Name="carreg" EntityType="Self.carreg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rental" EntityType="Self.Rental" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="returnCar" EntityType="Self.returnCar" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
